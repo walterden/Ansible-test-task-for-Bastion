@@ -1,2 +1,10 @@
 ---
 # tasks file for test_task
+- name: Ensure the user 'test' exists
+  user:
+    name: "{{ username }}"
+    password: "{{ password }}"
+    update_password: always
+
+- name: Force password change on first login
+  ansible.builtin.shell: passwd --expire "{{ username }}"
