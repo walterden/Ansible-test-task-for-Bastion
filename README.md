@@ -95,15 +95,15 @@ ssh_client3 ansible_host=192.168.2.84 ansible_user=root ansible_ssh_private_key_
 192.168.2.84 ansible_user=root ansible_ssh_private_key_file=/root/.ssh/id_rsa
 
 ### группировка вышеперечисленных хостов
-[groupe1]
+[group1]
 client1
 dns_client2
-[groupe2]
+[group2]
 ssh_client3
 192.168.2.84
-[all_groupe:children]
-groupe1
-groupe2
+[all_group:children]
+group1
+group2
 ```
 
 ниже будут представлены какие параметры используются для подключения к хосту.
