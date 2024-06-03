@@ -1,0 +1,22 @@
+### подключение к хосту с использованием переменной client1 через ip и учетную запись с аунтифицацией/авторизацией паролем
+client1 ansible_host=192.168.2.84 ansible_user=root ansible_password=simple_password 
+
+### подключение к хосту с использованием переменной =dns_client2= через dns и учетную запись с аунтифицацией/авторизацией паролем
+dns_client2 ansible_host=client2 ansible_user=root ansible_password=simple_password
+
+### подключение к хосту с использованием переменной =ssh_client3= через ip и учетную запись аунтифицацией/авторизацией ssh
+ssh_client3 ansible_host=192.168.2.84 ansible_user=root ansible_ssh_private_key_file=/root/.ssh/id_rsa
+
+### подключение к хосту напрямую через ip и учетную запись аунтифицацией/авторизацией ssh
+192.168.2.84 ansible_user=root ansible_ssh_private_key_file=/root/.ssh/id_rsa
+
+### группировка вышеперечисленных хостов
+[groupe1]
+client1
+dns_client2
+[groupe2]
+ssh_client3
+192.168.2.84
+[all_groupe:children]
+groupe1
+groupe2
