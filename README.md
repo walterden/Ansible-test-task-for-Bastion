@@ -9,31 +9,24 @@
 Необходимо инициализировать ansible role при помощи команды 
 `ansible-galaxy role init test_task`, таким образом ansible создаст структуру каталогов в текущем рабочем каталоге.
 
-test_task/
- README.md
-
- defaults/
- main.yml
-
- files/
-
- handlers/
- main.yml
- 
- meta/
- main.yml
-
- tasks/
- main.yml
- 
- templates/
- 
- tests/
- inventory
- test.yml
- 
- vars/
- main.yml
+├── README.md
+├── hosts
+├── playbook.yml
+└── test_task
+    ├── README.md
+    ├── defaults
+    │   └── main.yml
+    ├── handlers
+    │   └── main.yml
+    ├── meta
+    │   └── main.yml
+    ├── tasks
+    │   └── main.yml
+    ├── tests
+    │   ├── inventory
+    │   └── test.yml
+    └── vars
+        └── main.yml
 
 В файле `./teast_task/tasks/main.yml` располагаются необходимые задания, установка пароля заданного пользователя и флаг необходимости смены пароля при первом входе в систему.
 
