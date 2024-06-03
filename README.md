@@ -57,7 +57,9 @@ test_task/
 `name` `password` `update_password` - параметры модуля `ansible.builtin.user`
 
 `name` - имя пользователя, которого требуется создать, удалить или изменить.
+
 `password:` - введите хешированный пароль в качестве значения.
+
 `password: always` - обновит пароль если он отличается.
 
 `"{{ username }}"` `"{{ password }}"` - переменные.
