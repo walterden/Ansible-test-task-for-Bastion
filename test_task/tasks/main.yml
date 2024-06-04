@@ -1,7 +1,7 @@
 ---
 # tasks file for test_task
 - name: Ensure the user 'test' exists
-  user:
+  ansible.builtin.user:
     name: "{{ username }}"
     password: "{{ password }}"
     update_password: always
