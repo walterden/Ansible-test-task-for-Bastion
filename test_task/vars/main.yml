@@ -1,4 +1,4 @@
 ---
 # vars file for test_task
 username: test
-password: "{{ 'simple_password' | password_hash('sha512') }}"
+password: "{{ 'simple_password' | password_hash('sha512'), 'mysalt' }}"
