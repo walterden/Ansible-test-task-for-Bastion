@@ -5,6 +5,8 @@
     name: "{{ username }}"
     password: "{{ password }}"
     update_password: always
+  register: update_password
 
 - name: Force password change on first login
   ansible.builtin.shell: passwd --expire "{{ username }}"
+  when: update_password.changed
